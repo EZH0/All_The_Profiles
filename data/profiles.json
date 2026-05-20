@@ -1,0 +1,28 @@
+{
+  "site": {
+    "title": "WoW Addon Profile Vault",
+    "subtitle": "애드온 프로파일 문자열 공유 및 백업",
+    "downloadUrl": "",
+    "updatedAt": "2026-05-20"
+  },
+  "profiles": [
+    {
+      "id": "elvui-main",
+      "addon": "ElvUI",
+      "name": "Main UI",
+      "description": "기본 UI 프로파일 예시입니다.",
+      "version": "",
+      "tags": ["ui", "example"],
+      "body": "여기에 ElvUI 프로파일 문자열을 붙여넣으세요."
+    },
+    {
+      "id": "details-main",
+      "addon": "Details!",
+      "name": "Damage Meter",
+      "description": "Details 프로파일 예시입니다.",
+      "version": "",
+      "tags": ["meter", "example"],
+      "body": "여기에 Details! 프로파일 문자열을 붙여넣으세요."
+    }
+  ]
+}

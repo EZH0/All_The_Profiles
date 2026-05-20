@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WoW Addon Profile Vault</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="주요 메뉴">
+        <a class="brand" href="index.html">Profile Vault</a>
+        <a class="nav-link" href="admin.html">관리</a>
+      </nav>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">World of Warcraft</p>
+          <h1 id="site-title">애드온 프로파일 보관함</h1>
+          <p id="site-subtitle">ElvUI, Details!, DBM, 편집 모드 프로파일을 한곳에서 복사하세요.</p>
+        </div>
+        <a id="download-link" class="button primary hidden" href="#" target="_blank" rel="noreferrer">백업 다운로드</a>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="toolbar" aria-label="검색 및 필터">
+        <label class="search-field">
+          <span>검색</span>
+          <input id="search-input" type="search" placeholder="애드온, 이름, 태그">
+        </label>
+        <label class="select-field">
+          <span>애드온</span>
+          <select id="addon-filter">
+            <option value="">전체</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>프로파일</h2>
+          <p id="updated-at"></p>
+        </div>
+        <div id="profile-list" class="profile-grid"></div>
+        <p id="empty-state" class="empty hidden">조건에 맞는 프로파일이 없습니다.</p>
+      </section>
+    </main>
+  </body>
+</html>
