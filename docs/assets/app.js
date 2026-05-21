@@ -142,13 +142,11 @@ function renderProfileCard(profile) {
           <div class="addon">${escapeHtml(profile.addon)}</div>
           <h4>${escapeHtml(profile.name)}</h4>
         </div>
-        <span class="order-badge">${escapeHtml(profile.order || "")}</span>
       </header>
       <p>${escapeHtml(profile.description || "")}</p>
       ${profile.instructions ? `<p class="instruction">${escapeHtml(profile.instructions)}</p>` : ""}
       ${profile.version ? `<p>${escapeHtml(profile.version)}</p>` : ""}
       <div class="tags">${(profile.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
-      <div class="profile-meta">${escapeHtml(profile.path || "내장 문자열")}</div>
       <div class="actions compact-actions">
         <button class="button primary" data-copy="${escapeHtml(profile.id)}" type="button">복사</button>
         <button class="button" data-download="${escapeHtml(profile.id)}" type="button">TXT</button>
