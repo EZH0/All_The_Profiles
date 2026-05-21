@@ -37,13 +37,22 @@ const fields = {
   siteTitle: document.querySelector("#site-title-input"),
   siteSubtitle: document.querySelector("#site-subtitle-input"),
   downloadUrl: document.querySelector("#download-url-input"),
+  packageName: document.querySelector("#package-name-input"),
+  packageDate: document.querySelector("#package-date-input"),
+  packageSummary: document.querySelector("#package-summary-input"),
+  requiredAddons: document.querySelector("#required-addons-input"),
+  applyOrder: document.querySelector("#apply-order-input"),
+  resources: document.querySelector("#resources-input"),
   id: document.querySelector("#profile-id"),
   addon: document.querySelector("#profile-addon"),
   name: document.querySelector("#profile-name"),
   version: document.querySelector("#profile-version"),
+  group: document.querySelector("#profile-group"),
+  order: document.querySelector("#profile-order"),
   format: document.querySelector("#profile-format"),
   profilePath: document.querySelector("#profile-path"),
   description: document.querySelector("#profile-description"),
+  instructions: document.querySelector("#profile-instructions"),
   tags: document.querySelector("#profile-tags"),
   body: document.querySelector("#profile-body"),
   count: document.querySelector("#profile-count"),
@@ -83,7 +92,17 @@ function bindEvents() {
     if (item) editProfile(item.dataset.edit).catch(showError);
   });
 
-  [fields.siteTitle, fields.siteSubtitle, fields.downloadUrl].forEach((input) => {
+  [
+    fields.siteTitle,
+    fields.siteSubtitle,
+    fields.downloadUrl,
+    fields.packageName,
+    fields.packageDate,
+    fields.packageSummary,
+    fields.requiredAddons,
+    fields.applyOrder,
+    fields.resources
+  ].forEach((input) => {
     input.addEventListener("input", syncSiteFields);
   });
 }
@@ -133,6 +152,7 @@ async function loadRemote() {
 async function saveRemote() {
   saveSettings();
   syncSiteFields();
+  syncPackageFields();
   normalizeData();
   state.data.site.updatedAt = new Date().toISOString().slice(0, 10);
 
@@ -262,11 +282,14 @@ function upsertProfile() {
     id,
     addon,
     name,
+    group: fields.group.value.trim() || addon,
     description: fields.description.value.trim(),
+    instructions: fields.instructions.value.trim(),
     version: fields.version.value.trim(),
     tags: fields.tags.value.split(",").map((tag) => tag.trim()).filter(Boolean),
     format,
     source: "manual",
+    order: numberOrNull(fields.order.value),
     path
   };
 
@@ -292,9 +315,12 @@ async function editProfile(id) {
   fields.addon.value = profile.addon || "";
   fields.name.value = profile.name || "";
   fields.version.value = profile.version || "";
+  fields.group.value = profile.group || "";
+  fields.order.value = profile.order ?? "";
   fields.format.value = profile.format || "";
   fields.profilePath.value = profile.path || "";
   fields.description.value = profile.description || "";
+  fields.instructions.value = profile.instructions || "";
   fields.tags.value = (profile.tags || []).join(", ");
   fields.body.value = await loadBody(profile);
 }
@@ -314,9 +340,12 @@ function clearProfileForm() {
   fields.addon.value = "";
   fields.name.value = "";
   fields.version.value = "";
+  fields.group.value = "";
+  fields.order.value = "";
   fields.format.value = "";
   fields.profilePath.value = "";
   fields.description.value = "";
+  fields.instructions.value = "";
   fields.tags.value = "";
   fields.body.value = "";
 }
@@ -339,11 +368,14 @@ async function importFiles(event) {
       id: guessed.id,
       addon: guessed.addon,
       name: guessed.name,
+      group: guessed.addon,
       description: "",
+      instructions: "",
       version: "",
       tags: [guessed.format].filter(Boolean),
       format: guessed.format,
       source: "file-import",
+      order: nextOrder(),
       path: makeProfilePath(guessed.addon, guessed.name, guessed.id)
     };
     writeProfile(profile, body);
@@ -369,11 +401,14 @@ function parseBundle(text) {
       id,
       addon,
       name,
+      group: meta.group || addon,
       description: meta.description || "",
+      instructions: meta.instructions || "",
       version: meta.version || "",
       tags: splitTags(meta.tags),
       format: meta.format || slug(addon),
       source: meta.source || "bundle",
+      order: numberOrNull(meta.order),
       path: meta.path || makeProfilePath(addon, name, id)
     };
     entries.push({ profile, body });
@@ -432,6 +467,18 @@ function syncSiteFields() {
   };
 }
 
+function syncPackageFields() {
+  state.data.package = {
+    ...state.data.package,
+    name: fields.packageName.value.trim(),
+    versionDate: fields.packageDate.value.trim(),
+    summary: fields.packageSummary.value.trim(),
+    requiredAddons: lines(fields.requiredAddons.value),
+    applyOrder: lines(fields.applyOrder.value),
+    resources: parseResources(fields.resources.value)
+  };
+}
+
 function normalizeData() {
   state.data.site = { ...defaults.site, ...(state.data.site || {}) };
   state.data.package = { ...defaults.package, ...(state.data.package || {}) };
@@ -443,17 +490,55 @@ function renderAll() {
   fields.siteTitle.value = state.data.site.title || "";
   fields.siteSubtitle.value = state.data.site.subtitle || "";
   fields.downloadUrl.value = state.data.site.downloadUrl || "";
+  fields.packageName.value = state.data.package.name || "";
+  fields.packageDate.value = state.data.package.versionDate || "";
+  fields.packageSummary.value = state.data.package.summary || "";
+  fields.requiredAddons.value = (state.data.package.requiredAddons || []).join("\n");
+  fields.applyOrder.value = (state.data.package.applyOrder || []).join("\n");
+  fields.resources.value = (state.data.package.resources || []).map(formatResource).join("\n");
   fields.count.textContent = `${state.data.profiles.length}개`;
-  fields.list.innerHTML = state.data.profiles.map((profile) => `
+  fields.list.innerHTML = [...state.data.profiles].sort((a, b) => (a.order || 9999) - (b.order || 9999)).map((profile) => `
     <button class="admin-item" type="button" data-edit="${escapeHtml(profile.id)}">
       <span>
         <strong>${escapeHtml(profile.name)}</strong>
-        ${escapeHtml(profile.addon)} · ${escapeHtml(profile.id)}
+        ${escapeHtml(profile.addon)} · ${escapeHtml(profile.group || "")} · ${escapeHtml(profile.id)}
         <small>${escapeHtml(profile.path || "")}</small>
       </span>
-      <span>${escapeHtml(profile.version || profile.format || "")}</span>
+      <span>${escapeHtml(profile.order ?? profile.version ?? profile.format ?? "")}</span>
     </button>
   `).join("");
+}
+
+function lines(value) {
+  return String(value || "")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function parseResources(value) {
+  return lines(value).map((line) => {
+    const [label = "", url = "", type = "link"] = line.split("|").map((part) => part.trim());
+    return { label, url, type };
+  }).filter((resource) => resource.label || resource.url);
+}
+
+function formatResource(resource) {
+  return [resource.label || "", resource.url || "", resource.type || "link"].join(" | ");
+}
+
+function numberOrNull(value) {
+  const number = Number(value);
+  return Number.isFinite(number) && String(value).trim() !== "" ? number : null;
+}
+
+function nextOrder() {
+  normalizeData();
+  const max = state.data.profiles.reduce((highest, profile) => {
+    const order = Number(profile.order);
+    return Number.isFinite(order) ? Math.max(highest, order) : highest;
+  }, 0);
+  return max + 10;
 }
 
 function setStatus(message) {

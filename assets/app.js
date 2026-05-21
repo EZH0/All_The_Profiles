@@ -10,8 +10,10 @@ const nodes = {
   subtitle: document.querySelector("#site-subtitle"),
   download: document.querySelector("#download-link"),
   updatedAt: document.querySelector("#updated-at"),
+  packageSummary: document.querySelector("#package-summary"),
   requiredAddons: document.querySelector("#required-addons"),
   applyOrder: document.querySelector("#apply-order"),
+  resources: document.querySelector("#resource-links"),
   search: document.querySelector("#search-input"),
   addonFilter: document.querySelector("#addon-filter"),
   list: document.querySelector("#profile-list"),
@@ -99,8 +101,26 @@ function renderProfiles() {
 function renderOverview(data) {
   const required = data.package?.requiredAddons || [];
   const order = data.package?.applyOrder || [];
+  const resources = data.package?.resources || [];
+  nodes.packageSummary.textContent = data.package?.summary || "";
   nodes.requiredAddons.innerHTML = required.map((addon) => `<span class="pill">${escapeHtml(addon)}</span>`).join("");
   nodes.applyOrder.innerHTML = order.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+  nodes.resources.innerHTML = resources.length
+    ? resources.map(renderResource).join("")
+    : '<p class="overview-copy">등록된 다운로드 리소스가 없습니다.</p>';
+}
+
+function renderResource(resource) {
+  if (!resource.url) {
+    return `<div class="resource-item disabled">${escapeHtml(resource.label || "리소스")}</div>`;
+  }
+
+  return `
+    <a class="resource-item" href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">
+      <span>${escapeHtml(resource.label || "리소스")}</span>
+      <small>${escapeHtml(resource.type || "link")}</small>
+    </a>
+  `;
 }
 
 function groupProfiles(profiles) {
