@@ -48,7 +48,10 @@
       "description": "문서의 Elv UI 섹션 첫 번째 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "required"],
+      "tags": [
+        "ui",
+        "required"
+      ],
       "format": "elvui",
       "source": "document",
       "order": 10,
@@ -62,7 +65,10 @@
       "description": "문서의 Elv UI 섹션 두 번째 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "required"],
+      "tags": [
+        "ui",
+        "required"
+      ],
       "format": "elvui",
       "source": "document",
       "order": 20,
@@ -76,7 +82,10 @@
       "description": "문서의 Elv UI 섹션 세 번째 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "required"],
+      "tags": [
+        "ui",
+        "required"
+      ],
       "format": "elvui",
       "source": "document",
       "order": 30,
@@ -90,7 +99,10 @@
       "description": "문서의 Elv UI 섹션 네 번째 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "required"],
+      "tags": [
+        "ui",
+        "required"
+      ],
       "format": "elvui",
       "source": "document",
       "order": 40,
@@ -98,15 +110,18 @@
     },
     {
       "id": "windtools-main",
-      "addon": "ElvUI WindTools",
+      "addon": "ElvUI",
       "name": "WindTools 프로필",
       "group": "WindTools 프로필",
       "description": "WindTools 설정 프로필입니다.",
       "instructions": "WindTools 설정 > 고급 > 프로필에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "required"],
+      "tags": [
+        "ui",
+        "required"
+      ],
       "format": "windtools",
-      "source": "document",
+      "source": "manual",
       "order": 50,
       "path": "profiles/windtools/main.txt"
     },
@@ -118,7 +133,10 @@
       "description": "Cooldown Manager Centered 프로필 문자열입니다.",
       "instructions": "Cooldown Manager Centered 프로필 입력창에 붙여넣습니다.",
       "version": "",
-      "tags": ["cooldown", "required"],
+      "tags": [
+        "cooldown",
+        "required"
+      ],
       "format": "cooldown-manager-centered",
       "source": "document",
       "order": 60,
@@ -132,7 +150,10 @@
       "description": "증강용 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["edit-mode", "augmentation"],
+      "tags": [
+        "edit-mode",
+        "augmentation"
+      ],
       "format": "editmode",
       "source": "document",
       "order": 70,
@@ -146,7 +167,10 @@
       "description": "자원 2줄/필수 스킬 두 줄용 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["edit-mode", "resource"],
+      "tags": [
+        "edit-mode",
+        "resource"
+      ],
       "format": "editmode",
       "source": "document",
       "order": 80,
@@ -160,7 +184,10 @@
       "description": "DBM 프로필 문자열입니다.",
       "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
-      "tags": ["boss-mod", "required"],
+      "tags": [
+        "boss-mod",
+        "required"
+      ],
       "format": "dbm",
       "source": "document",
       "order": 90,
@@ -174,7 +201,9 @@
       "description": "XIV 프로필 문자열입니다.",
       "instructions": "XIV 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
-      "tags": ["bar"],
+      "tags": [
+        "bar"
+      ],
       "format": "xiv",
       "source": "document",
       "order": 100,
@@ -188,7 +217,10 @@
       "description": "Sensei Resource Bar 프로필 문자열입니다.",
       "instructions": "Sensei Resource Bar 가져오기 기능에 붙여넣습니다.",
       "version": "",
-      "tags": ["resource", "required"],
+      "tags": [
+        "resource",
+        "required"
+      ],
       "format": "sensei",
       "source": "document",
       "order": 110,
@@ -202,7 +234,10 @@
       "description": "Plater 이름표 프로필 문자열입니다.",
       "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["nameplate", "required"],
+      "tags": [
+        "nameplate",
+        "required"
+      ],
       "format": "plater",
       "source": "document",
       "order": 120,
@@ -216,7 +251,10 @@
       "description": "Cell 프로필 문자열입니다.",
       "instructions": "Cell 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["party", "raid"],
+      "tags": [
+        "party",
+        "raid"
+      ],
       "format": "cell",
       "source": "document",
       "order": 130,
