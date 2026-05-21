@@ -110,9 +110,9 @@
     },
     {
       "id": "windtools-main",
-      "addon": "ElvUI",
+      "addon": "ELV UI Windtools",
       "name": "WindTools 프로필",
-      "group": "WindTools 프로필",
+      "group": "Elv UI",
       "description": "WindTools 설정 프로필입니다.",
       "instructions": "WindTools 설정 > 고급 > 프로필에 붙여넣습니다.",
       "version": "",
