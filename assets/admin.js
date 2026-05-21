@@ -112,7 +112,7 @@ function restoreSettings() {
   fields.owner.value = saved.owner || "EZH0";
   fields.repo.value = saved.repo || "All_The_Profiles";
   fields.branch.value = saved.branch || "main";
-  fields.path.value = saved.path || "data/index.json";
+  fields.path.value = saved.path || "docs/data/index.json";
   fields.token.value = sessionStorage.getItem("profileVaultToken") || "";
 }
 
@@ -128,7 +128,7 @@ function saveSettings() {
 
 async function loadLocal() {
   setStatus("로컬 index를 불러오는 중");
-  const response = await fetch("data/index.json", { cache: "no-store" });
+  const response = await fetch("docs/data/index.json", { cache: "no-store" });
   state.data = await response.json();
   state.indexSha = "";
   state.bodyCache.clear();
@@ -160,7 +160,8 @@ async function saveRemote() {
   for (const profile of state.data.profiles) {
     const body = state.bodyCache.get(profile.id);
     if (body === undefined) continue;
-    await putGithubFile(profile.path, body, state.fileShas.get(profile.path));
+    const remotePath = publicToRemotePath(profile.path);
+    await putGithubFile(remotePath, body, state.fileShas.get(remotePath));
   }
 
   setStatus("index JSON 저장 중");
@@ -195,9 +196,10 @@ async function loadBody(profile) {
   if (!profile.path) return "";
 
   setStatus(`${profile.path} 불러오는 중`);
-  const response = await githubGet(profile.path);
+  const remotePath = publicToRemotePath(profile.path);
+  const response = await githubGet(remotePath);
   const body = decodeBase64(response.content);
-  state.fileShas.set(profile.path, response.sha);
+  state.fileShas.set(remotePath, response.sha);
   state.bodyCache.set(profile.id, body);
   setStatus("프로파일 본문 로드 완료");
   return body;
@@ -456,6 +458,13 @@ function makeProfilePath(addon, name, id) {
   const folder = slug(addon || "unknown") || "unknown";
   const file = slug(name || id || "profile") || "profile";
   return `profiles/${folder}/${file}.txt`;
+}
+
+function publicToRemotePath(path) {
+  if (!path) return path;
+  if (path.startsWith("docs/")) return path;
+  if (path.startsWith("profiles/") || path.startsWith("data/")) return `docs/${path}`;
+  return path;
 }
 
 function syncSiteFields() {
