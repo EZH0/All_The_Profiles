@@ -235,6 +235,18 @@ textarea:focus {
   font-size: 12px;
 }
 
+.profile-body:not(.hidden) {
+  max-height: 260px;
+  overflow: auto;
+}
+
+.profile-meta {
+  color: var(--muted);
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -318,6 +330,15 @@ textarea:focus {
   gap: 10px;
 }
 
+.compact-actions {
+  align-items: center;
+}
+
+.file-field {
+  display: block;
+  margin-top: 16px;
+}
+
 .admin-list {
   display: grid;
   gap: 10px;
@@ -344,6 +365,15 @@ textarea:focus {
 
 .admin-item span {
   color: var(--muted);
+}
+
+.admin-item small {
+  display: block;
+  color: var(--muted);
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 12px;
+  margin-top: 5px;
+  word-break: break-all;
 }
 
 @media (max-width: 760px) {

@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "All The Profiles",
+    "subtitle": "WoW 애드온 프로파일 문자열 공유 및 백업",
+    "downloadUrl": "",
+    "updatedAt": "2026-05-21"
+  },
+  "profiles": [
+    {
+      "id": "elvui-main",
+      "addon": "ElvUI",
+      "name": "Main UI",
+      "description": "ElvUI 프로파일 예시입니다.",
+      "version": "",
+      "tags": ["ui", "example"],
+      "format": "elvui",
+      "source": "manual",
+      "path": "profiles/elvui/main-ui.txt"
+    },
+    {
+      "id": "details-main",
+      "addon": "Details!",
+      "name": "Damage Meter",
+      "description": "Details! 프로파일 예시입니다.",
+      "version": "",
+      "tags": ["meter", "example"],
+      "format": "details",
+      "source": "manual",
+      "path": "profiles/details/damage-meter.txt"
+    }
+  ]
+}
