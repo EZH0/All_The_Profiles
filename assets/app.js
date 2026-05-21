@@ -10,6 +10,8 @@ const nodes = {
   subtitle: document.querySelector("#site-subtitle"),
   download: document.querySelector("#download-link"),
   updatedAt: document.querySelector("#updated-at"),
+  requiredAddons: document.querySelector("#required-addons"),
+  applyOrder: document.querySelector("#apply-order"),
   search: document.querySelector("#search-input"),
   addonFilter: document.querySelector("#addon-filter"),
   list: document.querySelector("#profile-list"),
@@ -59,6 +61,8 @@ function matches(profile) {
     profile.description,
     profile.version,
     profile.format,
+    profile.group,
+    profile.instructions,
     profile.path,
     ...(profile.tags || [])
   ].map(normalize).join(" ");
@@ -78,15 +82,50 @@ function renderFilters() {
 function renderProfiles() {
   const profiles = state.profiles.filter(matches);
   nodes.empty.classList.toggle("hidden", profiles.length > 0);
-  nodes.list.innerHTML = profiles.map((profile) => `
+  const groups = groupProfiles(profiles);
+  nodes.list.innerHTML = groups.map((group) => `
+    <section class="profile-group">
+      <div class="group-heading">
+        <h3>${escapeHtml(group.name)}</h3>
+        <span>${group.items.length}개</span>
+      </div>
+      <div class="profile-grid-inner">
+        ${group.items.map(renderProfileCard).join("")}
+      </div>
+    </section>
+  `).join("");
+}
+
+function renderOverview(data) {
+  const required = data.package?.requiredAddons || [];
+  const order = data.package?.applyOrder || [];
+  nodes.requiredAddons.innerHTML = required.map((addon) => `<span class="pill">${escapeHtml(addon)}</span>`).join("");
+  nodes.applyOrder.innerHTML = order.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+}
+
+function groupProfiles(profiles) {
+  const sorted = [...profiles].sort((a, b) => (a.order || 9999) - (b.order || 9999));
+  const map = new Map();
+  sorted.forEach((profile) => {
+    const groupName = profile.group || profile.addon || "기타";
+    if (!map.has(groupName)) map.set(groupName, []);
+    map.get(groupName).push(profile);
+  });
+  return [...map.entries()].map(([name, items]) => ({ name, items }));
+}
+
+function renderProfileCard(profile) {
+  return `
     <article class="profile-card">
       <header>
         <div>
           <div class="addon">${escapeHtml(profile.addon)}</div>
-          <h3>${escapeHtml(profile.name)}</h3>
+          <h4>${escapeHtml(profile.name)}</h4>
         </div>
+        <span class="order-badge">${escapeHtml(profile.order || "")}</span>
       </header>
       <p>${escapeHtml(profile.description || "")}</p>
+      ${profile.instructions ? `<p class="instruction">${escapeHtml(profile.instructions)}</p>` : ""}
       ${profile.version ? `<p>${escapeHtml(profile.version)}</p>` : ""}
       <div class="tags">${(profile.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
       <div class="profile-meta">${escapeHtml(profile.path || "내장 문자열")}</div>
@@ -97,7 +136,7 @@ function renderProfiles() {
       </div>
       <pre class="profile-body hidden" id="preview-${escapeHtml(profile.id)}"></pre>
     </article>
-  `).join("");
+  `;
 }
 
 async function copyProfile(id, button) {
@@ -204,6 +243,7 @@ loadIndex()
       nodes.download.classList.remove("hidden");
     }
     state.profiles = Array.isArray(data.profiles) ? data.profiles : [];
+    renderOverview(data);
     renderFilters();
     renderProfiles();
   })

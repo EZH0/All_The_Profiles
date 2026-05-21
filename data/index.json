@@ -1,32 +1,226 @@
 {
   "site": {
     "title": "All The Profiles",
-    "subtitle": "WoW 애드온 프로파일 문자열 공유 및 백업",
+    "subtitle": "애드온 세팅 26.04.22 - WoW UI 프로필 패키지",
     "downloadUrl": "",
     "updatedAt": "2026-05-21"
   },
+  "package": {
+    "name": "애드온 세팅",
+    "versionDate": "2026-04-22",
+    "summary": "필수 애드온 설치 후 순서대로 프로필 문자열을 적용하는 WoW UI 세팅 패키지입니다.",
+    "requiredAddons": [
+      "ElvUI",
+      "ElvUI WindTools",
+      "DBM",
+      "Plater",
+      "Sensei Resource Bar",
+      "Cooldown Manager Centered",
+      "SharedMedia"
+    ],
+    "applyOrder": [
+      "필수 애드온과 SharedMedia/폰트를 먼저 설치합니다.",
+      "ElvUI 프로필 4개를 문서 순서대로 하나씩 가져옵니다.",
+      "WindTools 설정의 고급 > 프로필에서 WindTools 문자열을 붙여넣습니다.",
+      "Cooldown Manager Centered, Sensei Resource Bar, 편집 모드 문자열을 적용합니다.",
+      "DBM, XIV, Plater, Cell 프로필을 적용합니다.",
+      "애드온 폴더와 폰트 백업이 있다면 마지막에 덮어씁니다."
+    ],
+    "resources": [
+      {
+        "label": "애드온 폴더",
+        "url": "",
+        "type": "drive"
+      },
+      {
+        "label": "폰트",
+        "url": "",
+        "type": "drive"
+      }
+    ]
+  },
   "profiles": [
     {
-      "id": "elvui-main",
+      "id": "elvui-import-1",
       "addon": "ElvUI",
-      "name": "Main UI",
-      "description": "ElvUI 프로파일 예시입니다.",
+      "name": "ElvUI 1",
+      "group": "Elv UI",
+      "description": "문서의 Elv UI 섹션 첫 번째 문자열입니다.",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["ui", "example"],
+      "tags": ["ui", "required"],
       "format": "elvui",
-      "source": "manual",
-      "path": "profiles/elvui/main-ui.txt"
+      "source": "document",
+      "order": 10,
+      "path": "profiles/elvui/import-1.txt"
     },
     {
-      "id": "details-main",
-      "addon": "Details!",
-      "name": "Damage Meter",
-      "description": "Details! 프로파일 예시입니다.",
+      "id": "elvui-import-2",
+      "addon": "ElvUI",
+      "name": "ElvUI 2",
+      "group": "Elv UI",
+      "description": "문서의 Elv UI 섹션 두 번째 문자열입니다.",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
-      "tags": ["meter", "example"],
-      "format": "details",
-      "source": "manual",
-      "path": "profiles/details/damage-meter.txt"
+      "tags": ["ui", "required"],
+      "format": "elvui",
+      "source": "document",
+      "order": 20,
+      "path": "profiles/elvui/import-2.txt"
+    },
+    {
+      "id": "elvui-import-3",
+      "addon": "ElvUI",
+      "name": "ElvUI 3",
+      "group": "Elv UI",
+      "description": "문서의 Elv UI 섹션 세 번째 문자열입니다.",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["ui", "required"],
+      "format": "elvui",
+      "source": "document",
+      "order": 30,
+      "path": "profiles/elvui/import-3.txt"
+    },
+    {
+      "id": "elvui-import-4",
+      "addon": "ElvUI",
+      "name": "ElvUI 4",
+      "group": "Elv UI",
+      "description": "문서의 Elv UI 섹션 네 번째 문자열입니다.",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["ui", "required"],
+      "format": "elvui",
+      "source": "document",
+      "order": 40,
+      "path": "profiles/elvui/import-4.txt"
+    },
+    {
+      "id": "windtools-main",
+      "addon": "ElvUI WindTools",
+      "name": "WindTools 프로필",
+      "group": "WindTools 프로필",
+      "description": "WindTools 설정 프로필입니다.",
+      "instructions": "WindTools 설정 > 고급 > 프로필에 붙여넣습니다.",
+      "version": "",
+      "tags": ["ui", "required"],
+      "format": "windtools",
+      "source": "document",
+      "order": 50,
+      "path": "profiles/windtools/main.txt"
+    },
+    {
+      "id": "cooldown-manager-centered",
+      "addon": "Cooldown Manager Centered",
+      "name": "CDMC 프로필값",
+      "group": "재사용대기자 / 센세이바 편집모드 프로필",
+      "description": "Cooldown Manager Centered 프로필 문자열입니다.",
+      "instructions": "Cooldown Manager Centered 프로필 입력창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["cooldown", "required"],
+      "format": "cooldown-manager-centered",
+      "source": "document",
+      "order": 60,
+      "path": "profiles/cooldown-manager-centered/profile.txt"
+    },
+    {
+      "id": "edit-mode-augmentation",
+      "addon": "Edit Mode",
+      "name": "편집 모드 - 증강",
+      "group": "재사용대기자 / 센세이바 편집모드 프로필",
+      "description": "증강용 WoW 편집 모드 문자열입니다.",
+      "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["edit-mode", "augmentation"],
+      "format": "editmode",
+      "source": "document",
+      "order": 70,
+      "path": "profiles/edit-mode/augmentation.txt"
+    },
+    {
+      "id": "edit-mode-resource-two-lines",
+      "addon": "Edit Mode",
+      "name": "편집 모드 - 자원 2줄",
+      "group": "재사용대기자 / 센세이바 편집모드 프로필",
+      "description": "자원 2줄/필수 스킬 두 줄용 WoW 편집 모드 문자열입니다.",
+      "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["edit-mode", "resource"],
+      "format": "editmode",
+      "source": "document",
+      "order": 80,
+      "path": "profiles/edit-mode/resource-two-lines.txt"
+    },
+    {
+      "id": "dbm-main",
+      "addon": "DBM",
+      "name": "DBM",
+      "group": "DBM",
+      "description": "DBM 프로필 문자열입니다.",
+      "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": ["boss-mod", "required"],
+      "format": "dbm",
+      "source": "document",
+      "order": 90,
+      "path": "profiles/dbm/main.txt"
+    },
+    {
+      "id": "xiv-main",
+      "addon": "XIV",
+      "name": "XIV",
+      "group": "XIV",
+      "description": "XIV 프로필 문자열입니다.",
+      "instructions": "XIV 프로필 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": ["bar"],
+      "format": "xiv",
+      "source": "document",
+      "order": 100,
+      "path": "profiles/xiv/main.txt"
+    },
+    {
+      "id": "sensei-resource-bar",
+      "addon": "Sensei Resource Bar",
+      "name": "Sensei",
+      "group": "Sensei",
+      "description": "Sensei Resource Bar 프로필 문자열입니다.",
+      "instructions": "Sensei Resource Bar 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": ["resource", "required"],
+      "format": "sensei",
+      "source": "document",
+      "order": 110,
+      "path": "profiles/sensei-resource-bar/main.txt"
+    },
+    {
+      "id": "plater-main",
+      "addon": "Plater",
+      "name": "Plater",
+      "group": "Plater",
+      "description": "Plater 이름표 프로필 문자열입니다.",
+      "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["nameplate", "required"],
+      "format": "plater",
+      "source": "document",
+      "order": 120,
+      "path": "profiles/plater/main.txt"
+    },
+    {
+      "id": "cell-main",
+      "addon": "Cell",
+      "name": "Cell",
+      "group": "Cell",
+      "description": "Cell 프로필 문자열입니다.",
+      "instructions": "Cell 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": ["party", "raid"],
+      "format": "cell",
+      "source": "document",
+      "order": 130,
+      "path": "profiles/cell/main.txt"
     }
   ]
 }

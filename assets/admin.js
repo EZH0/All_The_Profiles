@@ -5,6 +5,14 @@ const defaults = {
     downloadUrl: "",
     updatedAt: ""
   },
+  package: {
+    name: "",
+    versionDate: "",
+    summary: "",
+    requiredAddons: [],
+    applyOrder: [],
+    resources: []
+  },
   profiles: []
 };
 
@@ -138,6 +146,7 @@ async function saveRemote() {
   setStatus("index JSON 저장 중");
   const indexData = {
     site: state.data.site,
+    package: state.data.package,
     profiles: state.data.profiles.map(({ body, ...profile }) => profile)
   };
 
@@ -425,6 +434,7 @@ function syncSiteFields() {
 
 function normalizeData() {
   state.data.site = { ...defaults.site, ...(state.data.site || {}) };
+  state.data.package = { ...defaults.package, ...(state.data.package || {}) };
   state.data.profiles = Array.isArray(state.data.profiles) ? state.data.profiles : [];
 }
 
