@@ -149,7 +149,6 @@ function renderProfileCard(profile) {
       <div class="tags">${(profile.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
       <div class="actions compact-actions">
         <button class="button primary" data-copy="${escapeHtml(profile.id)}" type="button">복사</button>
-        <button class="button" data-download="${escapeHtml(profile.id)}" type="button">TXT</button>
         <button class="button" data-preview="${escapeHtml(profile.id)}" type="button">미리보기</button>
       </div>
       <pre class="profile-body hidden" id="preview-${escapeHtml(profile.id)}"></pre>
@@ -165,22 +164,6 @@ async function copyProfile(id, button) {
   const body = await loadProfileBody(profile);
   await navigator.clipboard.writeText(body);
   flashButton(button, "복사됨");
-}
-
-async function downloadProfile(id) {
-  const profile = state.profiles.find((item) => item.id === id);
-  if (!profile) return;
-
-  const body = await loadProfileBody(profile);
-  const blob = new Blob([body], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `${profile.id || "profile"}.txt`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
 }
 
 async function togglePreview(id, button) {
@@ -238,11 +221,9 @@ nodes.addonFilter.addEventListener("change", (event) => {
 
 nodes.list.addEventListener("click", (event) => {
   const copy = event.target.closest("[data-copy]");
-  const download = event.target.closest("[data-download]");
   const preview = event.target.closest("[data-preview]");
 
   if (copy) copyProfile(copy.dataset.copy, copy).catch(showError);
-  if (download) downloadProfile(download.dataset.download).catch(showError);
   if (preview) togglePreview(preview.dataset.preview, preview).catch(showError);
 });
 
