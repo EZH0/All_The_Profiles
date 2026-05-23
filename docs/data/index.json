@@ -3,11 +3,11 @@
     "title": "All The Profiles",
     "subtitle": "애드온 세팅 26.04.22 - WoW UI 프로필 패키지",
     "downloadUrl": "",
-    "updatedAt": "2026-05-21"
+    "updatedAt": "2026-05-24"
   },
   "package": {
     "name": "애드온 세팅",
-    "versionDate": "2026-04-22",
+    "versionDate": "2026-05-24",
     "summary": "필수 애드온 설치 후 순서대로 프로필 문자열을 적용하는 WoW UI 세팅 패키지입니다.",
     "requiredAddons": [
       "ElvUI",
@@ -40,23 +40,6 @@
     ]
   },
   "profiles": [
-    {
-      "id": "elvui-import-1",
-      "addon": "ElvUI",
-      "name": "ElvUI 1",
-      "group": "Elv UI",
-      "description": "문서의 Elv UI 섹션 첫 번째 문자열입니다.",
-      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "ui",
-        "required"
-      ],
-      "format": "elvui",
-      "source": "document",
-      "order": 10,
-      "path": "profiles/elvui/import-1.txt"
-    },
     {
       "id": "elvui-import-2",
       "addon": "ElvUI",
@@ -110,20 +93,20 @@
     },
     {
       "id": "windtools-main",
-      "addon": "ELV UI Windtools",
-      "name": "WindTools 프로필",
+      "addon": "ElvUI WindTools",
+      "name": "WindTools Profile",
       "group": "Elv UI",
-      "description": "WindTools 설정 프로필입니다.",
-      "instructions": "WindTools 설정 > 고급 > 프로필에 붙여넣습니다.",
+      "description": "",
+      "instructions": "WindTools 설정 > 고급 > 프로필 가져오기에 붙여넣습니다.",
       "version": "",
       "tags": [
         "ui",
         "required"
       ],
       "format": "windtools",
-      "source": "manual",
+      "source": "official-export",
       "order": 50,
-      "path": "profiles/windtools/main.txt"
+      "path": "profiles/elvui-windtools/windtools-profile.txt"
     },
     {
       "id": "cooldown-manager-centered",
@@ -212,9 +195,9 @@
     {
       "id": "sensei-resource-bar",
       "addon": "Sensei Resource Bar",
-      "name": "Sensei",
+      "name": "Sensei Resource Bar",
       "group": "Sensei",
-      "description": "Sensei Resource Bar 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Sensei Resource Bar 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -222,9 +205,9 @@
         "required"
       ],
       "format": "sensei",
-      "source": "document",
+      "source": "official-export",
       "order": 110,
-      "path": "profiles/sensei-resource-bar/main.txt"
+      "path": "profiles/sensei-resource-bar/sensei-resource-bar.txt"
     },
     {
       "id": "plater-main",
@@ -259,6 +242,89 @@
       "source": "document",
       "order": 130,
       "path": "profiles/cell/main.txt"
+    },
+    {
+      "id": "elvui-default_ezho",
+      "addon": "ElvUI",
+      "name": "Default_Ezho",
+      "group": "Elv UI",
+      "description": "",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "ui",
+        "required"
+      ],
+      "format": "elvui",
+      "source": "official-export",
+      "order": 10,
+      "path": "profiles/elvui/default_ezho.txt"
+    },
+    {
+      "id": "details-m",
+      "addon": "Details!",
+      "name": "M+",
+      "group": "Details!",
+      "description": "",
+      "instructions": "Details 프로필 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "meter"
+      ],
+      "format": "details",
+      "source": "official-export",
+      "order": 91,
+      "path": "profiles/details/m.txt"
+    },
+    {
+      "id": "plater-jundies-plater",
+      "addon": "Plater",
+      "name": "Jundies Plater",
+      "group": "Plater",
+      "description": "",
+      "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "nameplate",
+        "required"
+      ],
+      "format": "plater",
+      "source": "official-export",
+      "order": 120,
+      "path": "profiles/plater/jundies-plater.txt"
+    },
+    {
+      "id": "dbm-default",
+      "addon": "DBM",
+      "name": "Default",
+      "group": "DBM",
+      "description": "",
+      "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "boss-mod",
+        "required"
+      ],
+      "format": "dbm",
+      "source": "official-export",
+      "order": 100,
+      "path": "profiles/dbm/default.txt"
+    },
+    {
+      "id": "edit-mode",
+      "addon": "Edit Mode",
+      "name": "쿨다운두줄",
+      "group": "Edit Mode",
+      "description": "",
+      "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "edit-mode"
+      ],
+      "format": "editmode",
+      "source": "official-export",
+      "order": 80,
+      "path": "profiles/edit-mode/쿨다운두줄.txt"
     }
   ]
 }
