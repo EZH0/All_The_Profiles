@@ -2,7 +2,6 @@
   "site": {
     "title": "All The Profiles",
     "subtitle": "애드온 세팅 26.04.22 - WoW UI 프로필 패키지",
-    "downloadUrl": "",
     "updatedAt": "2026-05-24"
   },
   "package": {
@@ -29,12 +28,12 @@
     "resources": [
       {
         "label": "애드온 폴더",
-        "url": "",
+        "url": "https://drive.google.com/file/d/16HN92d2cnHY2mvmzJ1v5H6dcKF7XjOTY/view?usp=sharing",
         "type": "drive"
       },
       {
         "label": "폰트",
-        "url": "",
+        "url": "https://drive.google.com/file/d/1mbVQYJBsgEUS3fl-x0DHhqi7H9VlLn54/view?usp=sharing",
         "type": "drive"
       }
     ]
