@@ -111,7 +111,7 @@
       "id": "edit-mode-augmentation",
       "addon": "Edit Mode",
       "name": "편집 모드 - 증강",
-      "group": "재사용대기자 / 센세이바 편집모드 프로필",
+      "group": "편집모드",
       "description": "증강용 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
@@ -120,7 +120,7 @@
         "augmentation"
       ],
       "format": "editmode",
-      "source": "document",
+      "source": "manual",
       "order": 70,
       "path": "profiles/edit-mode/augmentation.txt"
     },
@@ -128,7 +128,7 @@
       "id": "edit-mode-resource-two-lines",
       "addon": "Edit Mode",
       "name": "편집 모드 - 자원 2줄",
-      "group": "재사용대기자 / 센세이바 편집모드 프로필",
+      "group": "편집모드",
       "description": "자원 2줄/필수 스킬 두 줄용 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
@@ -137,7 +137,7 @@
         "resource"
       ],
       "format": "editmode",
-      "source": "document",
+      "source": "manual",
       "order": 80,
       "path": "profiles/edit-mode/resource-two-lines.txt"
     },
