@@ -192,23 +192,6 @@
       "path": "profiles/sensei-resource-bar/sensei-resource-bar.txt"
     },
     {
-      "id": "plater-main",
-      "addon": "Plater",
-      "name": "Plater",
-      "group": "Plater",
-      "description": "Plater 이름표 프로필 문자열입니다.",
-      "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "nameplate",
-        "required"
-      ],
-      "format": "plater",
-      "source": "document",
-      "order": 120,
-      "path": "profiles/plater/main.txt"
-    },
-    {
       "id": "cell-main",
       "addon": "Cell",
       "name": "Cell",
@@ -221,7 +204,7 @@
         "raid"
       ],
       "format": "cell",
-      "source": "document",
+      "source": "manual",
       "order": 130,
       "path": "profiles/cell/main.txt"
     },
