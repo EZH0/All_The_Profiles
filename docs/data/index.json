@@ -109,23 +109,6 @@
       "path": "profiles/elvui-windtools/windtools-profile.txt"
     },
     {
-      "id": "cooldown-manager-centered",
-      "addon": "Cooldown Manager Centered",
-      "name": "CDMC 프로필값",
-      "group": "재사용대기자 / 센세이바 편집모드 프로필",
-      "description": "Cooldown Manager Centered 프로필 문자열입니다.",
-      "instructions": "Cooldown Manager Centered 프로필 입력창에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "cooldown",
-        "required"
-      ],
-      "format": "cooldown-manager-centered",
-      "source": "document",
-      "order": 60,
-      "path": "profiles/cooldown-manager-centered/profile.txt"
-    },
-    {
       "id": "edit-mode-augmentation",
       "addon": "Edit Mode",
       "name": "편집 모드 - 증강",
@@ -325,6 +308,24 @@
       "source": "official-export",
       "order": 80,
       "path": "profiles/edit-mode/쿨다운두줄.txt"
+    },
+    {
+      "id": "cooldown-manager-centered-default",
+      "addon": "Cooldown Manager Centered",
+      "name": "쿨다운매니저",
+      "group": "Cooldown Manager",
+      "description": "쿨다운매니저 설정기타등등",
+      "instructions": "Cooldown Manager Centered 설정의 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "cooldown",
+        "ui",
+        "required"
+      ],
+      "format": "cooldown-manager-centered",
+      "source": "manual",
+      "order": 130,
+      "path": "profiles/cooldown-manager-centered/default.txt"
     }
   ]
 }
