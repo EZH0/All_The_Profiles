@@ -1,13 +1,13 @@
 {
   "site": {
     "title": "All The Profiles",
-    "subtitle": "애드온 세팅 26.04.22 - WoW UI 프로필 패키지",
+    "subtitle": "All The Profiles - WoW UI 프로필 모음",
     "updatedAt": "2026-05-26"
   },
   "package": {
-    "name": "애드온 세팅",
+    "name": "All The Profiles",
     "versionDate": "2026-05-26",
-    "summary": "필수 애드온 설치 후 순서대로 프로필 문자열을 적용하는 WoW UI 세팅 패키지입니다.",
+    "summary": "ElvUI, Plater, DBM, Cell 등 WoW UI 프로필 문자열을 한곳에 모아 순서대로 복사할 수 있는 프로필 보관함입니다.",
     "requiredAddons": [
       "ElvUI",
       "ElvUI WindTools",
@@ -44,7 +44,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 2",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles의 두 번째 ElvUI 가져오기 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -61,7 +61,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 3",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles의 세 번째 ElvUI 가져오기 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -78,7 +78,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 4",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles의 네 번째 ElvUI 가져오기 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -95,7 +95,7 @@
       "addon": "ElvUI WindTools",
       "name": "WindTools Profile",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles에서 함께 적용하는 WindTools 설정 문자열입니다.",
       "instructions": "WindTools 설정 > 고급 > 프로필 가져오기에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -112,7 +112,7 @@
       "addon": "Edit Mode",
       "name": "편집 모드 - 증강",
       "group": "편집모드",
-      "description": "증강용 WoW 편집 모드 문자열입니다.",
+      "description": "All The Profiles 증강 UI 배치를 위한 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -129,7 +129,7 @@
       "addon": "Edit Mode",
       "name": "편집 모드 - 자원 2줄",
       "group": "편집모드",
-      "description": "자원 2줄/필수 스킬 두 줄용 WoW 편집 모드 문자열입니다.",
+      "description": "All The Profiles 자원 2줄/필수 스킬 두 줄 배치를 위한 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -146,7 +146,7 @@
       "addon": "DBM",
       "name": "DBM",
       "group": "DBM",
-      "description": "DBM 프로필 문자열입니다.",
+      "description": "All The Profiles에서 사용하는 DBM 프로필 문자열입니다.",
       "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -163,7 +163,7 @@
       "addon": "XIV",
       "name": "XIV",
       "group": "XIV",
-      "description": "XIV 프로필 문자열입니다.",
+      "description": "All The Profiles에서 사용하는 XIV Databar 프로필 문자열입니다.",
       "instructions": "XIV 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -179,7 +179,7 @@
       "addon": "Sensei Resource Bar",
       "name": "Sensei Resource Bar",
       "group": "Sensei",
-      "description": "",
+      "description": "All The Profiles에서 사용하는 Sensei Resource Bar 프로필 문자열입니다.",
       "instructions": "Sensei Resource Bar 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -196,7 +196,7 @@
       "addon": "Cell",
       "name": "Cell",
       "group": "Cell",
-      "description": "",
+      "description": "All The Profiles 파티/공격대 프레임 구성을 위한 Cell 프로필 문자열입니다.",
       "instructions": "Cell 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -213,7 +213,7 @@
       "addon": "ElvUI",
       "name": "Default_Ezho",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles의 기본 ElvUI 프로필 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -230,7 +230,7 @@
       "addon": "Details!",
       "name": "M+",
       "group": "Details!",
-      "description": "",
+      "description": "All The Profiles에서 사용하는 Details! M+ 프로필 문자열입니다.",
       "instructions": "Details 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -246,7 +246,7 @@
       "addon": "Plater",
       "name": "Jundies Plater",
       "group": "Plater",
-      "description": "",
+      "description": "All The Profiles 이름표 구성을 위한 Jundies Plater 프로필 문자열입니다.",
       "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -263,7 +263,7 @@
       "addon": "DBM",
       "name": "Default",
       "group": "DBM",
-      "description": "",
+      "description": "All The Profiles에서 사용하는 DBM 기본 프로필 문자열입니다.",
       "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -280,7 +280,7 @@
       "addon": "Edit Mode",
       "name": "쿨다운두줄",
       "group": "Edit Mode",
-      "description": "",
+      "description": "All The Profiles에서 사용하는 WoW 편집 모드 문자열입니다.",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -296,7 +296,7 @@
       "addon": "Cooldown Manager Centered",
       "name": "CDM",
       "group": "Cooldown Manager",
-      "description": "",
+      "description": "All The Profiles용 Cooldown Manager Centered 기본 프로필 문자열입니다.",
       "instructions": "Cooldown Manager Centered 설정의 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -314,7 +314,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 1",
       "group": "Elv UI",
-      "description": "",
+      "description": "All The Profiles의 첫 번째 ElvUI 가져오기 문자열입니다.",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [

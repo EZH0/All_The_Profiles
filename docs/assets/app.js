@@ -8,7 +8,6 @@ const state = {
 const nodes = {
   title: document.querySelector("#site-title"),
   subtitle: document.querySelector("#site-subtitle"),
-  download: document.querySelector("#download-link"),
   updatedAt: document.querySelector("#updated-at"),
   packageSummary: document.querySelector("#package-summary"),
   requiredAddons: document.querySelector("#required-addons"),
@@ -237,10 +236,6 @@ loadIndex()
     nodes.title.textContent = data.site?.title || "All The Profiles";
     nodes.subtitle.textContent = data.site?.subtitle || "";
     nodes.updatedAt.textContent = data.site?.updatedAt ? `Updated ${data.site.updatedAt}` : "";
-    if (data.site?.downloadUrl) {
-      nodes.download.href = data.site.downloadUrl;
-      nodes.download.classList.remove("hidden");
-    }
     state.profiles = Array.isArray(data.profiles) ? data.profiles : [];
     renderOverview(data);
     renderFilters();
