@@ -2,11 +2,11 @@
   "site": {
     "title": "All The Profiles",
     "subtitle": "애드온 세팅 26.04.22 - WoW UI 프로필 패키지",
-    "updatedAt": "2026-05-24"
+    "updatedAt": "2026-05-26"
   },
   "package": {
     "name": "애드온 세팅",
-    "versionDate": "2026-05-24",
+    "versionDate": "2026-05-26",
     "summary": "필수 애드온 설치 후 순서대로 프로필 문자열을 적용하는 WoW UI 세팅 패키지입니다.",
     "requiredAddons": [
       "ElvUI",
@@ -44,7 +44,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 2",
       "group": "Elv UI",
-      "description": "문서의 Elv UI 섹션 두 번째 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -52,16 +52,16 @@
         "required"
       ],
       "format": "elvui",
-      "source": "document",
+      "source": "official-export",
       "order": 20,
-      "path": "profiles/elvui/import-2.txt"
+      "path": "profiles/elvui/elvui-2.txt"
     },
     {
       "id": "elvui-import-3",
       "addon": "ElvUI",
       "name": "ElvUI 3",
       "group": "Elv UI",
-      "description": "문서의 Elv UI 섹션 세 번째 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -69,16 +69,16 @@
         "required"
       ],
       "format": "elvui",
-      "source": "document",
+      "source": "official-export",
       "order": 30,
-      "path": "profiles/elvui/import-3.txt"
+      "path": "profiles/elvui/elvui-3.txt"
     },
     {
       "id": "elvui-import-4",
       "addon": "ElvUI",
       "name": "ElvUI 4",
       "group": "Elv UI",
-      "description": "문서의 Elv UI 섹션 네 번째 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -86,9 +86,9 @@
         "required"
       ],
       "format": "elvui",
-      "source": "document",
+      "source": "official-export",
       "order": 40,
-      "path": "profiles/elvui/import-4.txt"
+      "path": "profiles/elvui/elvui-4.txt"
     },
     {
       "id": "windtools-main",
@@ -196,7 +196,7 @@
       "addon": "Cell",
       "name": "Cell",
       "group": "Cell",
-      "description": "Cell 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Cell 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -204,9 +204,9 @@
         "raid"
       ],
       "format": "cell",
-      "source": "manual",
+      "source": "official-export",
       "order": 130,
-      "path": "profiles/cell/main.txt"
+      "path": "profiles/cell/cell.txt"
     },
     {
       "id": "elvui-default_ezho",
@@ -294,9 +294,9 @@
     {
       "id": "cooldown-manager-centered-default",
       "addon": "Cooldown Manager Centered",
-      "name": "쿨다운매니저",
+      "name": "CDM",
       "group": "Cooldown Manager",
-      "description": "쿨다운매니저 설정기타등등",
+      "description": "",
       "instructions": "Cooldown Manager Centered 설정의 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -308,6 +308,23 @@
       "source": "manual",
       "order": 130,
       "path": "profiles/cooldown-manager-centered/default.txt"
+    },
+    {
+      "id": "elvui-import-1",
+      "addon": "ElvUI",
+      "name": "ElvUI 1",
+      "group": "Elv UI",
+      "description": "",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "ui",
+        "required"
+      ],
+      "format": "elvui",
+      "source": "official-export",
+      "order": 10,
+      "path": "profiles/elvui/elvui-1.txt"
     }
   ]
 }
