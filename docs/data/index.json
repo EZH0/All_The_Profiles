@@ -209,23 +209,6 @@
       "path": "profiles/cell/cell.txt"
     },
     {
-      "id": "elvui-default_ezho",
-      "addon": "ElvUI",
-      "name": "Default_Ezho",
-      "group": "Elv UI",
-      "description": "All The Profiles의 기본 ElvUI 프로필 문자열입니다.",
-      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "ui",
-        "required"
-      ],
-      "format": "elvui",
-      "source": "official-export",
-      "order": 10,
-      "path": "profiles/elvui/default_ezho.txt"
-    },
-    {
       "id": "details-m",
       "addon": "Details!",
       "name": "M+",
