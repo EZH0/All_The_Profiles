@@ -44,7 +44,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 2",
       "group": "Elv UI",
-      "description": "All The Profiles의 두 번째 ElvUI 가져오기 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -61,7 +61,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 3",
       "group": "Elv UI",
-      "description": "All The Profiles의 세 번째 ElvUI 가져오기 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -78,7 +78,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 4",
       "group": "Elv UI",
-      "description": "All The Profiles의 네 번째 ElvUI 가져오기 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -95,7 +95,7 @@
       "addon": "ElvUI WindTools",
       "name": "WindTools Profile",
       "group": "Elv UI",
-      "description": "All The Profiles에서 함께 적용하는 WindTools 설정 문자열입니다.",
+      "description": "",
       "instructions": "WindTools 설정 > 고급 > 프로필 가져오기에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -144,25 +144,25 @@
     {
       "id": "xiv-main",
       "addon": "XIV",
-      "name": "XIV",
+      "name": "Default",
       "group": "XIV",
-      "description": "All The Profiles에서 사용하는 XIV Databar 프로필 문자열입니다.",
-      "instructions": "XIV 프로필 가져오기 기능에 붙여넣습니다.",
+      "description": "",
+      "instructions": "Profile Exporter backup string for XIV_Databar_Continued.",
       "version": "",
       "tags": [
         "bar"
       ],
       "format": "xiv",
-      "source": "document",
-      "order": 100,
-      "path": "profiles/xiv/main.txt"
+      "source": "profile-exporter",
+      "order": 105,
+      "path": "profiles/xiv/default.txt"
     },
     {
       "id": "sensei-resource-bar",
       "addon": "Sensei Resource Bar",
       "name": "Sensei Resource Bar",
       "group": "Sensei",
-      "description": "All The Profiles에서 사용하는 Sensei Resource Bar 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Sensei Resource Bar 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -179,7 +179,7 @@
       "addon": "Cell",
       "name": "Cell",
       "group": "Cell",
-      "description": "All The Profiles 파티/공격대 프레임 구성을 위한 Cell 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Cell 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -196,7 +196,7 @@
       "addon": "Details!",
       "name": "M+",
       "group": "Details!",
-      "description": "All The Profiles에서 사용하는 Details! M+ 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Details 프로필 가져오기 기능에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -212,7 +212,7 @@
       "addon": "Plater",
       "name": "Jundies Plater",
       "group": "Plater",
-      "description": "All The Profiles 이름표 구성을 위한 Jundies Plater 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Plater 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -229,7 +229,7 @@
       "addon": "Edit Mode",
       "name": "쿨다운두줄",
       "group": "Edit Mode",
-      "description": "All The Profiles에서 사용하는 WoW 편집 모드 문자열입니다.",
+      "description": "",
       "instructions": "WoW 편집 모드 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -243,9 +243,9 @@
     {
       "id": "cooldown-manager-centered-default",
       "addon": "Cooldown Manager Centered",
-      "name": "CDM",
+      "name": "Default",
       "group": "Cooldown Manager",
-      "description": "All The Profiles용 Cooldown Manager Centered 기본 프로필 문자열입니다.",
+      "description": "",
       "instructions": "Cooldown Manager Centered 설정의 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -254,7 +254,7 @@
         "required"
       ],
       "format": "cooldown-manager-centered",
-      "source": "manual",
+      "source": "official-export",
       "order": 130,
       "path": "profiles/cooldown-manager-centered/default.txt"
     },
@@ -263,7 +263,7 @@
       "addon": "ElvUI",
       "name": "ElvUI 1",
       "group": "Elv UI",
-      "description": "All The Profiles의 첫 번째 ElvUI 가져오기 문자열입니다.",
+      "description": "",
       "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
       "version": "",
       "tags": [
@@ -274,6 +274,40 @@
       "source": "official-export",
       "order": 10,
       "path": "profiles/elvui/elvui-1.txt"
+    },
+    {
+      "id": "elvui-default_ezho",
+      "addon": "ElvUI",
+      "name": "Default_Ezho",
+      "group": "Elv UI",
+      "description": "",
+      "instructions": "ElvUI 프로필 가져오기 창에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "ui",
+        "required"
+      ],
+      "format": "elvui",
+      "source": "official-export",
+      "order": 10,
+      "path": "profiles/elvui/default_ezho.txt"
+    },
+    {
+      "id": "dbm-default",
+      "addon": "DBM",
+      "name": "Default",
+      "group": "DBM",
+      "description": "",
+      "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
+      "version": "",
+      "tags": [
+        "boss-mod",
+        "required"
+      ],
+      "format": "dbm",
+      "source": "official-export",
+      "order": 100,
+      "path": "profiles/dbm/default.txt"
     }
   ]
 }
