@@ -305,7 +305,7 @@
         "required"
       ],
       "format": "dbm",
-      "source": "official-export",
+      "source": "manual",
       "order": 100,
       "path": "profiles/dbm/default.txt"
     }
