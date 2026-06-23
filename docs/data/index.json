@@ -2,11 +2,11 @@
   "site": {
     "title": "All The Profiles",
     "subtitle": "All The Profiles - WoW UI 프로필 모음",
-    "updatedAt": "2026-05-26"
+    "updatedAt": "2026-06-23"
   },
   "package": {
     "name": "All The Profiles",
-    "versionDate": "2026-05-26",
+    "versionDate": "2026-06-23",
     "summary": "ElvUI, Plater, DBM, Cell 등 WoW UI 프로필 문자열을 한곳에 모아 순서대로 복사할 수 있는 프로필 보관함입니다.",
     "requiredAddons": [
       "ElvUI",
@@ -142,23 +142,6 @@
       "path": "profiles/edit-mode/resource-two-lines.txt"
     },
     {
-      "id": "dbm-main",
-      "addon": "DBM",
-      "name": "DBM",
-      "group": "DBM",
-      "description": "All The Profiles에서 사용하는 DBM 프로필 문자열입니다.",
-      "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "boss-mod",
-        "required"
-      ],
-      "format": "dbm",
-      "source": "document",
-      "order": 90,
-      "path": "profiles/dbm/main.txt"
-    },
-    {
       "id": "xiv-main",
       "addon": "XIV",
       "name": "XIV",
@@ -240,23 +223,6 @@
       "source": "official-export",
       "order": 120,
       "path": "profiles/plater/jundies-plater.txt"
-    },
-    {
-      "id": "dbm-default",
-      "addon": "DBM",
-      "name": "Default",
-      "group": "DBM",
-      "description": "All The Profiles에서 사용하는 DBM 기본 프로필 문자열입니다.",
-      "instructions": "DBM 프로필 가져오기 기능에 붙여넣습니다.",
-      "version": "",
-      "tags": [
-        "boss-mod",
-        "required"
-      ],
-      "format": "dbm",
-      "source": "official-export",
-      "order": 100,
-      "path": "profiles/dbm/default.txt"
     },
     {
       "id": "edit-mode",
