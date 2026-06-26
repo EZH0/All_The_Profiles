@@ -2,11 +2,11 @@
   "site": {
     "title": "All The Profiles",
     "subtitle": "All The Profiles - WoW UI 프로필 모음",
-    "updatedAt": "2026-06-23"
+    "updatedAt": "2026-06-27"
   },
   "package": {
     "name": "All The Profiles",
-    "versionDate": "2026-06-23",
+    "versionDate": "2026-06-27",
     "summary": "ElvUI, Plater, DBM, Cell 등 WoW UI 프로필 문자열을 한곳에 모아 순서대로 복사할 수 있는 프로필 보관함입니다.",
     "requiredAddons": [
       "ElvUI",
@@ -28,7 +28,7 @@
     "resources": [
       {
         "label": "애드온 폴더",
-        "url": "https://drive.google.com/file/d/16HN92d2cnHY2mvmzJ1v5H6dcKF7XjOTY/view?usp=sharing",
+        "url": "https://drive.google.com/file/d/1x45Bg4EOWbvzFep-Fv_HTsYYFEqUpgbP/view?usp=sharing",
         "type": "drive"
       },
       {
